@@ -28,11 +28,24 @@ void loop() {
     return;
   }
   
-  Serial.print("Sensor: ");
-  Serial.print((int)temperature); Serial.print(" *C, "); 
-  Serial.print((int)humidity); Serial.println(" H");
+  Serial.println("Sensors: ");
+//  Serial.print((int)temperature); Serial.print(" *C, "); 
+//  Serial.print((int)humidity); Serial.println(" H");
+  Serial.print("Temperature (*C) "); Serial.println((int)temperature);
+  Serial.print("Humidity (%) "); Serial.println((int)humidity);
   msvalue = analogRead(msensor);
-  Serial.print("Moisture "); Serial.println(msvalue);
+  float a = msvalue;
+//  Serial.print("Moisture "); Serial.println(msvalue);
+  Serial.print("Moisture (%) "); Serial.println((a/1000)*100);
+
   
-  delay(1500);
+//
+//  if (humidity > 70) {
+//    Serial.println("Substances: Compost");
+//  } else {
+//    Serial.println("Substances: N / A");
+//  }
+
+    delay(1500);
+
 }
